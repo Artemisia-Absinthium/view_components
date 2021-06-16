@@ -10,6 +10,10 @@
 
 ### Breaking changes
 
+* Restrict `Details` body slot tags to `:div`, `:ul`, `:details-dialog`, or `:details-menu`. 
+
+    *Kate Higa*
+
 * Restrict `Menu` heading slot tags to heading tags and require `tag` argument.
 
     *Kate Higa*
