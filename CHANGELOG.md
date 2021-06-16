@@ -4,6 +4,10 @@
 
 ### Breaking changes
 
+* Restrict `AvatarStack` body slot tag and `ImageCrop` spinner tag.
+
+    *Kate Higa*
+
 * Restrict `Menu` heading slot tags to heading tags and require `tag` argument.
 
     *Kate Higa*

@@ -10,6 +10,9 @@ module Primer
 
     DEFAULT_TAG = :div
     TAG_OPTIONS = [DEFAULT_TAG, :span].freeze
+
+    DEFAULT_BODY_TAG = :div
+    BODY_TAG_OPTIONS = TAG_OPTIONS = [DEFAULT_TAG, :span].freeze
     # Required list of stacked avatars.
     #
     # @param kwargs [Hash] The same arguments as <%= link_to_component(Primer::AvatarComponent) %>.
@@ -47,7 +50,8 @@ module Primer
       @tooltipped = tooltipped
       @body_arguments = body_arguments
 
-      @body_arguments[:tag] ||= :div # rubocop:disable Primer/NoTagMemoize
+      body_tag = @body_arguments[:tag] || DEFAULT_BODY_TAG
+      @body_arguments[:tag] = fetch_or_fallback(BODY_TAG_OPTIONS, body_tag, DEFAULT_BODY_TAG)
       @body_arguments[:classes] = class_names(
         "AvatarStack-body",
         @body_arguments[:classes]
